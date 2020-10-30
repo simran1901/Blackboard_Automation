@@ -74,3 +74,14 @@ print('Logged into Blackboard...')
 insta_login()
 print('Logged into Instagram...')
 time.sleep(10)
+
+not_now = second_driver.find_element_by_xpath('/html/body/div[1]/section/main/div/div/div/div/button')
+not_now.click()
+print('Clicked \'Not Now\'...(Instagram)')
+time.sleep(5)
+direct_message = second_driver.find_element_by_xpath('/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[2]/a')
+direct_message.click()
+print('Clicked \'Direct Message\'...(Instagram)')
+
+time.sleep(5)
+
