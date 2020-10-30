@@ -139,3 +139,13 @@ def leave_session():
     print('Switched to first tab...(Blackboard)')
     time.sleep(5)
 
+def isPolling():
+    try:
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[5]/div/div[1]/span/button')
+        temp = int(span.strip())
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[5]/div/div[1]/div/div/div/ul/li['+str(temp)+']/button')
+        print('Going for polling...(Blackboard)')
+        return True
+    except (NoSuchElementException, ValueError):
+        print('Polling is not applicable...(Blackboard)')
+        return False
