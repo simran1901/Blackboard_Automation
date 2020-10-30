@@ -157,3 +157,157 @@ def isChat():
     except NoSuchElementException:
         return False
 
+def del_ch():
+    clear_chat = second_driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[1]/div/div/div[3]/button')
+    clear_chat.click()
+    delete_chat = second_driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/div[2]/div[3]/div[1]/button')
+    delete_chat.click()
+    confirm_delete = second_driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div[2]/button[1]')
+    confirm_delete.click()
+    print('Deleted chat...(Instagram)')
+
+def start_session(n, end):
+    """It starts a new session"""
+    global sessions
+    n = driver.find_element_by_xpath(n)
+    n.click()
+    time.sleep(10)
+
+    while True:
+        try:
+            session_list = driver.find_element_by_xpath('/html/body/div[1]/div[2]/bb-base-layout/div/main/div[3]/div/div[3]/div/div/div/div[2]/div/div[2]/div[3]/div/div[2]/div[3]/aside/div[6]/div[2]/div[2]/div/div/button/span')
+            print('Got session list...(Blackboard)')
+            time.sleep(5)
+            try:
+                session_list.click()
+            except ElementNotInteractableException:
+                continue
+            break
+        except NoSuchElementException:
+            time.sleep(5)
+    time.sleep(5)
+    try:
+        li = driver.find_element_by_xpath("/html/body/div[1]/div[2]/bb-base-layout/div/main/div[3]/div/div[3]/div/div/div/div[2]/div/div[2]/div[3]/div/div[2]/div[3]/aside/div[6]/div[2]/div[2]/div/div/ul/li[3]")
+        print('3rd session is active...(Blackboard)')
+    except NoSuchElementException:
+        try:
+            li = driver.find_element_by_xpath("/html/body/div[1]/div[2]/bb-base-layout/div/main/div[3]/div/div[3]/div/div/div/div[2]/div/div[2]/div[3]/div/div[2]/div[3]/aside/div[6]/div[2]/div[2]/div/div/ul/li[2]")
+            print('2nd session is active...(Blackboard)')
+        except NoSuchElementException:
+            li = driver.find_element_by_xpath("/html/body/div[1]/div[2]/bb-base-layout/div/main/div[3]/div/div[3]/div/div/div/div[2]/div/div[2]/div[3]/div/div[2]/div[3]/aside/div[6]/div[2]/div[2]/div/div/ul/li[1]")
+            print('1st session is active...(Blackboard)')
+    li.click()
+    print('Choosing a session...(Blackboard)')
+    print('Session number: '+ str(sessions) + '...(Blackboard)')
+    time.sleep(5)
+    driver.close()
+    switch(1)
+    print('Switched to second tab...(Blackboard)')
+    # ***** Optional audio and video checks *****
+    # audiocheck = driver.find_element_by_xpath('/html/body/div[5]/div/div[2]/div/div/div[2]/button')
+    # audiocheck.click()
+    # time.sleep(30)
+    # videocheck = driver.find_element_by_xpath('/html/body/div[5]/div/div[3]/div/div/div[3]/div/button')
+    # videocheck.click()
+    while True:
+        try:
+            cross = driver.find_element_by_xpath('/html/body/div[5]/div/button')
+            break
+        except NoSuchElementException:
+            time.sleep(10)
+    cross.click()
+    print('Cancelled audio and video checks...(Blackboard)')
+    
+    if sessions == 0:
+        time.sleep(20)
+        later = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div/div/div[4]/button')
+        later.click()
+        print('Clicked Later...(Blackboard)')
+        time.sleep(2)
+        nav = driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div/div[2]/bb-tutorial-dialog/div/div[2]/button')
+        nav.click()
+        print('Clicked Close...(Blackboard)')
+    
+    time.sleep(10)
+    chat_button = driver.find_element_by_xpath('/html/body/div[1]/div[1]/main/bb-panel-open-control/div/button[1]')
+    chat_button.click()
+    print('Clicked chat field...(Blackboard)')
+    time.sleep(5)
+    everyone = driver.find_element_by_xpath('/html/body/div[1]/div[1]/main/div[3]/section/div/div/ul/li/ul/li/bb-channel-list-item/button')
+    everyone.click()
+    print('Choosing Everyone...(Blackboard)')
+    try:
+        close = driver.find_element_by_xpath('/html/body/div[1]/div[1]/main/div[3]/section/section/bb-chat-input/div/bb-guidance-dialog/div/button')
+        close.click()
+        print('Clicking Close...(Blackboard)')
+    except NoSuchElementException:
+        print('Chat is off...(Blackboard)')
+
+    if datetime.now()<end:
+
+        send_message = second_driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/button')
+        send_message.click()
+        print('Send Message has been clicked...(Instagram)')
+        name_field = second_driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[2]/input')
+        name_field.clear()
+        name_field.send_keys('<classmate_username>')
+        print('Entering name...(Instagram)')
+        time.sleep(2)
+        select = second_driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[2]/div[1]/div/div[3]/button')
+        select.click()
+        print('Clicking Select...(Instagram)')
+        time.sleep(3)
+        next_key = second_driver.find_element_by_xpath('/html/body/div[4]/div/div/div[1]/div/div[2]/div/button')
+        next_key.click()
+        print('Clicking Next...(Instagram)')
+        time.sleep(10)
+
+        # Clear chat
+        del_ch()
+        
+        time.sleep(2)
+        text_area = second_driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea')
+        text_area.clear()
+        text_area.send_keys('I should start answering now.')
+        print('Typed a message...(Instagram)')
+        send_key = second_driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[3]/button')
+        send_key.click()
+        print('Sent a message...(Instagram)')
+        time.sleep(5)
+        msgno = 3
+        
+        while datetime.now()<end:
+            
+            while datetime.now()<end:
+                
+                try:
+                    msgloc = '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[1]/div/div/div['+str(msgno)+']/div[2]/div/div/div/div/div/div/div/div/span'
+                    span = (second_driver.find_element_by_xpath(msgloc)).text
+                    msgno += 1
+                    break
+
+                except NoSuchElementException:
+                    time.sleep(10)
+           
+            # switch(1)
+            time.sleep(5)
+            if isPolling():
+                pollopt = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[5]/div/div[1]/div/div/div/ul/li['+span.strip()+']/button')
+                pollopt.click()
+            elif isChat():
+                print('Going for chat...(Blackboard)')
+                chat_area = driver.find_element_by_xpath('/html/body/div[1]/div[1]/main/div[3]/section/section/bb-chat-input/div/div/textarea')
+                chat_area.clear()
+                chat_area.send_keys(span)
+                chat_area.send_keys(Keys.ENTER)
+            time.sleep(2)
+            # switch(2)
+
+        try:
+            del_ch()
+
+        except NoSuchElementException:
+            pass
+        
+    sessions += 1
+    leave_session()
