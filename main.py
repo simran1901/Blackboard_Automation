@@ -114,3 +114,6 @@ sel = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/di
 10 - SE
 11 - SE Lab
 """
+
+def switch(m):
+    driver.switch_to_window(driver.window_handles[m])
