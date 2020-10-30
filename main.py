@@ -39,3 +39,11 @@ print('Opened up a browser for Blackboard...')
 driver.get("https://cuchd.blackboard.com/")
 second_driver.get('https://www.instagram.com')
 
+try:
+    consent = driver.find_element_by_xpath("/html/body/div[4]/div/div/div/div/div/div/div[2]/button")
+    consent.click()
+    print('Accepted privacy and consent...(Blackboard)')
+except NoSuchElementException:
+    pass
+
+time.sleep(3)
