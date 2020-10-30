@@ -421,3 +421,27 @@ def frischedule():
     now = wait(datetime.now(), 14, 30)
     if now >= now.replace(hour=14, minute=30) and now < now.replace(hour=15, minute=30):
         start_session(ot, now.replace(hour=15, minute=30))
+
+def satschedule():
+    """Saturday Schedule"""
+    now = wait(datetime.now(), 9, 45)
+    if now >= now.replace(hour=9, minute=45) and now < now.replace(hour=10, minute=45):
+        start_session(coa, now.replace(hour=10, minute=45))
+
+    now = wait(datetime.now(), 10, 45)
+    if now >= now.replace(hour=10, minute=45) and now < now.replace(hour=11, minute=45):
+        start_session(ot, now.replace(hour=11, minute=45))
+    # break
+
+    now = wait(datetime.now(), 12, 30)
+    if now >= now.replace(hour=12, minute=30) and now < now.replace(hour=13, minute=30):
+        start_session(jp, now.replace(hour=13, minute=30))
+
+    now = wait(datetime.now(), 13, 30)
+    if now >= now.replace(hour=13, minute=30) and now < now.replace(hour=14, minute=30):
+        start_session(dsl, now.replace(hour=14, minute=30))
+
+    now = wait(datetime.now(), 14, 30)
+    if now >= now.replace(hour=14, minute=30) and now < now.replace(hour=15, minute=30):
+        start_session(dsl, now.replace(hour=15, minute=30))
+
