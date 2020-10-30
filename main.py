@@ -85,3 +85,32 @@ print('Clicked \'Direct Message\'...(Instagram)')
 
 time.sleep(5)
 
+# Subjects!!
+
+ap = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[2]/bb-base-course-card"
+coa = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[3]/bb-base-course-card"
+ds = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[4]/bb-base-course-card"
+dsl = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[5]/bb-base-course-card"
+iml = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[6]/bb-base-course-card"
+jp = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[7]/bb-base-course-card"
+jpl = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[8]/bb-base-course-card"
+lsm = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[9]/bb-base-course-card"
+ot = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[10]/bb-base-course-card"
+otb = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[11]/bb-base-course-card"
+se = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[12]/bb-base-course-card"
+sel = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/div/div/div[1]/div/div[2]/div/div[13]/bb-base-course-card"
+
+"""
+0 - Aptitude
+1- COA
+2 - DS
+3 - DS Lab
+4 - IM&L
+5 - Java Programming
+6 - Java Programming Lab
+7 - LSM
+8 - OT
+9 - OTB
+10 - SE
+11 - SE Lab
+"""
