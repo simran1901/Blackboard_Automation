@@ -264,7 +264,7 @@ def start_session(n, end):
 
         # Clear chat
         del_ch()
-        
+
         time.sleep(2)
         text_area = second_driver.find_element_by_xpath('/html/body/div[1]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea')
         text_area.clear()
@@ -311,3 +311,11 @@ def start_session(n, end):
         
     sessions += 1
     leave_session()
+
+def wait(now, h, m):
+    """Wait till it's time"""
+    while(now < now.replace(hour=h, minute=m)):
+        time.sleep(10)
+        now = datetime.now()
+    return now
+
