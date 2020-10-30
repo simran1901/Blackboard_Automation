@@ -34,3 +34,8 @@ second_driver = webdriver.Chrome(options=opt)
 print('Opened up a browser for instagram...')
 driver = webdriver.Chrome(options=opt)
 print('Opened up a browser for Blackboard...')
+
+# Get the sites
+driver.get("https://cuchd.blackboard.com/")
+second_driver.get('https://www.instagram.com')
+
