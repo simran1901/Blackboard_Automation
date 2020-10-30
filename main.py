@@ -47,3 +47,30 @@ except NoSuchElementException:
     pass
 
 time.sleep(3)
+
+# Login functions
+def bb_login():
+    username = driver.find_element_by_name("user_id")
+    username.clear()
+    username.send_keys('<yourUsername>')
+    password = driver.find_element_by_name("password")
+    password.clear()
+    password.send_keys('<yourPassword>')
+    login_button = driver.find_element_by_id("entry-login")
+    login_button.click()
+
+def insta_login():
+    igname = second_driver.find_element_by_xpath('/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[1]/div/label/input')
+    igname.clear()
+    igname.send_keys('<yourUsername>')
+    igpass = second_driver.find_element_by_xpath('/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[2]/div/label/input')
+    igpass.clear()
+    igpass.send_keys('<yourPassword>')
+    login = second_driver.find_element_by_xpath('/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]/button')
+    login.click()
+
+bb_login()
+print('Logged into Blackboard...')
+insta_login()
+print('Logged into Instagram...')
+time.sleep(10)
