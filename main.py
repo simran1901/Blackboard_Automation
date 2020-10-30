@@ -27,3 +27,10 @@ opt.add_experimental_option("prefs", {
 })
 opt.add_argument("--disable-extensions")
 
+# DRIVER_PATH = "C:\\Users\\Makhijani's\\Downloads\\chromedriver_win32\\chromedriver.exe"
+
+# Open browser
+second_driver = webdriver.Chrome(options=opt)
+print('Opened up a browser for instagram...')
+driver = webdriver.Chrome(options=opt)
+print('Opened up a browser for Blackboard...')
