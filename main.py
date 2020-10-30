@@ -117,3 +117,25 @@ sel = "/html/body/div[1]/div[2]/bb-base-layout/div/main/div/div/div[1]/div[1]/di
 
 def switch(m):
     driver.switch_to_window(driver.window_handles[m])
+
+def leave_session():
+    # switch(1)
+    status = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[5]/div/span[1]/div[1]/button')
+    status.click()
+    print('Status clicked...(Blackboard)')
+    time.sleep(2)
+    leave = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[5]/div/span[1]/div[2]/ul[1]/li[2]/button')
+    leave.click()
+    print('Clicked Leave...(Blackboard)')
+    time.sleep(3)
+    submit = driver.find_element_by_xpath('/html/body/div[6]/div/div[2]/div[2]/button[2]')
+    submit.click()
+    print('Clicked Skip...(Blackboard)')
+    time.sleep(8)
+    driver.close()
+    print('Left the session...(Blackboard)')
+    print('Closed second tab...(Blackboard)')
+    switch(0)
+    print('Switched to first tab...(Blackboard)')
+    time.sleep(5)
+
