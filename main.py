@@ -445,3 +445,22 @@ def satschedule():
     if now >= now.replace(hour=14, minute=30) and now < now.replace(hour=15, minute=30):
         start_session(dsl, now.replace(hour=15, minute=30))
 
+# Driver Script
+if __name__=='__main__':
+    day = datetime.today().strftime("%A")
+    if day == "Monday":
+        monschedule()
+    elif day == "Tuesday":
+        tueschedule()
+    elif day == "Wednesday":
+        wedschedule()
+    elif day == "Thursday":
+        thuschedule()
+    elif day == "Friday":
+        frischedule()
+    elif day == "Saturday":
+        satschedule()
+
+    driver.close()
+    second_driver.close()
+    exit()
