@@ -149,3 +149,11 @@ def isPolling():
     except (NoSuchElementException, ValueError):
         print('Polling is not applicable...(Blackboard)')
         return False
+
+def isChat():
+    try:
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/main/div[3]/section/section/bb-chat-input/div/div/textarea')
+        return True
+    except NoSuchElementException:
+        return False
+
